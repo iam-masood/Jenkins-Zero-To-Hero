@@ -1,0 +1,49 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build') {
+            steps {
+                // Compile the Java code
+                sh 'javac HelloWorld.java'
+            }
+        }
+        stage('Test') {
+            steps {
+                // Run tests (if any)
+                // You can add your test commands here
+            }
+        }
+        stage('Deploy') {
+            steps {
+                // Execute the Java program
+                sh 'java HelloWorld'
+            }
+        }
+    }
+}
+
+
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build') {
+            steps {
+                // Nothing to build for Node.js application
+            }
+        }
+        stage('Test') {
+            steps {
+                // Run tests (if any)
+                // You can add your test commands here
+            }
+        }
+        stage('Deploy') {
+            steps {
+                // Execute the Node.js program
+                sh 'node app.js'
+            }
+        }
+    }
+}
