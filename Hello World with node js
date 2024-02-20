@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Clone') {
+            steps {
+                // Clone the repository
+                git 'https://github.com/iam-masood/Jenkins-Zero-To-Hero.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                // Nothing to build for a "Hello World" app
+            }
+        }
+        stage('Test') {
+            steps {
+                // Run tests (if any)
+                // You can add your test commands here
+            }
+        }
+        stage('Deploy') {
+            steps {
+                // Execute the Node.js program
+                sh 'node app.js'
+            }
+        }
+    }
+}
